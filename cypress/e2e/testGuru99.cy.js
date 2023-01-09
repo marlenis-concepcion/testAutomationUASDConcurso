@@ -1,4 +1,7 @@
-describe('template spec', () => {
+import { tutorialpages } from "../support/guru99pages/tutorialpages";
+
+
+describe('UASD Concurso', () => {
     it('Login Guru 99', () => {
       cy.visit('http://demo.guru99.com')
 
@@ -7,7 +10,11 @@ describe('template spec', () => {
 
       //assertions
 
-      cy.wait(60000)
-      cy.xpath('//h2[contains(@class,"barone")]').click();
+      cy.wait(6000)
+      cy.xpath('//h2[contains(@class,"barone")]').click()
+      cy.get('.barone').should('be.visible', 'Guru99 Bank')
+      cy.get('.barone').should('not.contain', 'Guru99 Bank999')
+
+
     })
   })
