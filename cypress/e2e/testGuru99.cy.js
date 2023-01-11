@@ -1,5 +1,5 @@
 import { tutorialpages } from "../support/guru99pages/tutorialpages";
-
+ let tp = new tutorialpages();
 
 describe('UASD Concurso', () => {
     it('Login Guru 99', () => {
@@ -14,6 +14,8 @@ describe('UASD Concurso', () => {
       cy.xpath('//h2[contains(@class,"barone")]').click()
       cy.get('.barone').should('be.visible', 'Guru99 Bank')
       cy.get('.barone').should('not.contain', 'Guru99 Bank999')
+
+      tp.verifypagesLinkisDisplayed();
 
 
     })
