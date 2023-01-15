@@ -51,9 +51,58 @@ export class tutorialpages {
     }
 
     selectOccupation(){
-        cy.xpath(' //select[contains(@name,"occupation")]').select("Teacher");
+        cy.xpath('//select[contains(@name,"occupation")]').select("Teacher");
        
         return this;
     }
 
+    setStreet(){
+
+        cy.xpath('//input[contains(@name,"street")]').type("Xavier X-MEN");
+        return this;
+    }
+
+    setCity(){
+
+        cy.xpath('//input[contains(@name,"city")]').type("Xavier X-MEN");
+        return this;
+    }
+
+    setCounty(){
+
+        cy.xpath('//input[contains(@name,"county")]').type("Zona Universitaria");
+        return this;
+    }
+
+    setPostalCode(){
+        cy.xpath('//input[contains(@name,"post_code")]').type("10707");
+        return this;
+    }
+
+    setEmail(){
+
+        cy.xpath('//input[contains(@name,"email")]').type("mjccmaster@gmail.com");
+        return this;
+    }
+
+    
+    setPassword(){
+
+        cy.xpath('//input[@name="password"]').type("1234");
+        return this;
+    }
+
+    setConfirmPassword(){
+
+        cy.xpath('//input[contains(@name,"c_password")]').type("1234");
+        return this;
+    }
+    
+
+    clickSubmitBtn(){
+        //cy.xpath('//input[contains(@value,"Create")]').click({ force: true });
+        cy.xpath('//input[contains(@value,"Create")]').should('be.visible', 'Create');
+        return this;
+    }
+    
 }
